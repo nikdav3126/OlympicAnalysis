@@ -35,6 +35,7 @@ def welcome():
         f'<h3>/api/v1.0/noc-regions</h3>'
         f'<h3>/api/v1.0/data</h3>'
         f'<h3>/api/v1.0/countrypredictions</h3>'
+        f'<h3>/api/v1.0/athletes</h3>'
  
 
     )
