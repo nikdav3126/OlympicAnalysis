@@ -63,5 +63,15 @@ def pets():
     result = json.dumps([dict(r) for r in data])
     return result
 
+@app.route("/api/v1.0/athletes")
+def predictionData():
+   
+   from user_prediction import predict
+
+   prediction = predict(sex,age,height,weight,NOC) 
+   # prediction = [(Shooting, Archery, Horse stuff),(running, swimming, sleeping)]
+
+   return redirect('/athletes') #with the data from prediction filled in
+
 if __name__ == '__main__':
     app.run(debug=True)
