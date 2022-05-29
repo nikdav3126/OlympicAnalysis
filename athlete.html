@@ -37,18 +37,18 @@
     <div class="row">
         <h3>Input User Statistics:</h3>
       <div class="col-md-3">
-        <form action="">
+            <form action="https://pro4-oly.herokuapp.com/api/v1.0/athletes">
             <fieldset>
                 <div>
-                <label for="gender">Gender:</label><br>
-                <select name="gender" id="gender">
+                <label for="Sex">Gender:</label><br>
+                <select name="Sex" id="Sex">
                   <option value="M">Male</option>
                   <option value="F">Female</option>
                 </select>
                 </div>
                 <div>
-                <label for="noc">Country of Origin:</label><br>
-                    <select name="noc" id="noc">
+                <label for="NOC">Country of Origin:</label><br>
+                    <select name="NOC" id="NOC">
                     <option value="USA">United States of America</option>
                     <option value="AFG">Afghanistan</option>
                     <option value="ALB">Albania</option>
@@ -275,12 +275,13 @@
                     </select>
                 </div>
             <div>
-              <label for="fname">Age:</label><br>
-              <input type="text" id="fage" name="age" value=""><br>
-              <label for="lname">Weight (kg):</label><br>
-              <input type="text" id="fweight" name="Weight" value=""><br><br>
-              <label for="gname">Height (cm):</label><br>
-              <input type="text" id="fheight" name="height" value=""><br>
+                
+              <label for="Age">Age:</label><br>
+              <input type="text" id="Age" name="Age" value=""><br>
+              <label for="Weight">Weight (kg):</label><br>
+              <input type="text" id="Weight" name="Weight" value=""><br><br>
+              <label for="Height">Height (cm):</label><br>
+              <input type="text" id="Height" name="Height" value=""><br>
               </div>
             </fieldset>
             <button onclick="getInputFromBox1()">Submit

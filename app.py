@@ -66,9 +66,9 @@ def pets():
 @app.route("/api/v1.0/athletes")
 def predictionData():
    
-   from user_prediction import predict
+   from User_Sport_Pred import user_predictor
 
-   prediction = predict(gender,age,height,weight) 
+   prediction = predict(gender,noc,age,height,weight) 
    # prediction = [(Shooting, Archery, Horse stuff),(running, swimming, sleeping)]
 
    return redirect('/athletes') #with the data from prediction filled in
