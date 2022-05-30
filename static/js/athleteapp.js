@@ -96,37 +96,43 @@ function sportChanged(sport) {
 };
 
 
-approute = "https://pro4-oly.herokuapp.com/api/v1.0/athletes"
+// var approute = "https://pro4-oly.herokuapp.com/api/v1.0/athletes"
 
 function getInputFromBoxes() {
 
     var Sex = document.getElementById("Sex").value;
-    console.log("Sex");
+    // console.log("Sex");
 
     var NOC = document.getElementById("NOC").value;
-    console.log("NOC");
+    // console.log("NOC");
 
     var Age = document.getElementById("Age").value;
-    console.log("Age");
+    // console.log("Age");
     
-    var Height = document.getElementById("fheight").value;
-    console.log("Height");
+    var Height = document.getElementById("Height").value;
+    // console.log("Height");
 
     var Weight = document.getElementById("Weight").value;
-    console.log("Weight");
+    // console.log("Weight");
 
+    var stuff =JSON.stringify({Sex, Age, Height, Weight, NOC})
 
-    (async()=>{
-        var response = await fetch(
-            'http://127.0.0.1:5000/predict',
-            // "https://pro4-oly.herokuapp.com/api/v1.0/athletes",
-            {data: JSON.stringify({Sex, Age, Height, Weight, NOC}),
-            method:"POST"}
-        );
+    console.log(stuff)
+
+    async function postData() {
+        var response = await fetch('/predict', {method:'POST',
+        headers: {'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'},
+        body: JSON.stringify({Sex, Age, Height, Weight, NOC})
+    })
+        response = response.json();
         return response
         
-    })();
-    console.log(response)
+    };
+    postData().then(value => console.log(value))
+    // console.log(postData())
+     
 };
+
 
 init();
