@@ -54,64 +54,70 @@
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="sports">Statistics</a></li>
-            <li><a href="country">Countries</a></li>
-            <li><a href="athlete">Athletes</a></li>
+            <li><a href="stats.html">Statistics</a></li>
+            <li><a href="country.html">Countries</a></li>
+            <li><a href="athlete.html">Athletes</a></li>
+            
     </div>
     </nav>
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Athlete</h1>
-        <p></p>
+        <h1>Olympic Athletes</h1>
+        <p>Grab some popcorn, pick a nation and start saying "I could have done that better" to elite athletes!</p>
       </div>
     </div>
     <div class="container">
-    <div class="row">
-        <div class="col-md-9">
-          <center>
-            <h3>Athlete Data:</h3>
-            <h5>Select Sport:</h5>
-            <select id="selSport" onchange="sportChanged(this.value)">
-            </select>
-            <div id="scatterplot">
-            </div>
-            <div class="row">
-              <div id="ageplot"></div>
-            </div>
-        </center>
-        </div>
-      <div class="col-md-3">
-        <h3>Input User Statistics:</h3>
-        <!-- "https://pro4-oly.herokuapp.com/api/v1.0/athletes" -->
+      <div class="row">
+        <div class="col-sm-3">
+          <h3>Input User Statistics:</h3>
             <form action=https://pro4-oly.herokuapp.com/api/v1.0/athletes method="post">
-            <fieldset>
+              <fieldset>
                 <div>
-                <label for="Sex">Gender:</label><br>
-                <select name="Sex" id="Sex">
+                  <label for="Sex">Gender:</label><br>
+                  <select name="Sex" id="Sex">
                   <option value="M">Male</option>
                   <option value="F">Female</option>
-                </select>
+                  </select>
                 </div>
-                <div>
-                <label for="NOC">Country of Origin:</label><br>
-                    <select name="NOC" id="NOC">
-                      
-                    </select>
-                </div>
-            <div>
-              <label for="Age">Age:</label><br>
-              <input type="text" id="Age" name="Age" value=""><br>
-              <label for="Weight">Weight (kg):</label><br>
-              <input type="text" id="Weight" name="Weight" value=""><br><br>
-              <label for="Height">Height (cm):</label><br>
-              <input type="text" id="Height" name="Height" value=""><br>
+              <div>
+                  <label for="NOC">Country of Origin:</label><br>
+                  <select name="NOC" id="NOC"></select>
               </div>
-            </fieldset>
-            <!-- <button onclick="getInputFromBoxes()">Submit</button> -->
-            <p><input type = "submit" value = "submit" /></p>
+                <div>
+                  <label for="Age">Age:</label><br>
+                  <input type="text" id="Age" name="Age" value=""><br>
+                  <label for="Weight">Weight (kg):</label><br>
+                  <input type="text" id="Weight" name="Weight" value=""><br><br>
+                  <label for="Height">Height (cm):</label><br>
+                  <input type="text" id="Height" name="Height" value=""><br>
+                </div>
+              </fieldset>
+          <!-- <button onclick="getInputFromBoxes()">Submit</button> -->
+            <p><input type = "Submit" value = "Submit" /></p>
           </form>
+        </div>
+        <div class="col-sm-9">
+          <h3>Athlete Data:</h3>
+          <h5>Select Sport:</h5>
+            <select id="selSport" onchange="sportChanged(this.value)"></select>
+          <div id="scatterplot">
+          </div>
+          <div class="row">
+            <div id="ageplot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+          <h3>Predicted User Sport:</h3>
+        </div>
+        <div id="user-stats" class="panel-body"></div>
+      </div>
 
+
+ 
           <script src="https://d3js.org/d3.v5.min.js"></script>
           <script src="../static/js/athleteapp.js"></script>
           <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
