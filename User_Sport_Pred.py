@@ -102,14 +102,19 @@ fWeight_bins = np.array([25, 40.77777778, 56.55555556, 72.33333333, 88.11111111,
 
 
 def user_predictor(Sex, Age, Height, Weight, NOC):
-    if Sex == 'M':
-        user_df = pd.DataFrame(
+    
+    user_df = pd.DataFrame(
         {
-         "Age": [user_Age],
-         "Height": [user_Height],
-         "Weight": [user_Weight],
-         "NOC": [user_NOC]
+         "Sex": [Sex],
+         "Age": [Age],
+         "Height": [Height],
+         "Weight": [Weight],
+         "NOC": [NOC]
         })
+
+
+    if Sex == 'M':
+
 
         user_df['Age'] = user_df['Age'].astype(float, errors = 'raise')
         user_df['Height'] = user_df['Height'].astype(float, errors = 'raise')
@@ -348,15 +353,9 @@ def user_predictor(Sex, Age, Height, Weight, NOC):
         final_max = [user_max_sport, two_max_sport, three_max_sport]
         final_min = [user_min_sport, two_min_sport, three_min_sport]
 
-
+ 
     else:
-        user_df = pd.DataFrame(
-        {
-         "Age": [user_Age],
-         "Height": [user_Height],
-         "Weight": [user_Weight],
-         "NOC": [user_NOC]
-        })
+
 
         user_df['Age'] = user_df['Age'].astype(float, errors = 'raise')
         user_df['Height'] = user_df['Height'].astype(float, errors = 'raise')
@@ -604,6 +603,9 @@ def user_predictor(Sex, Age, Height, Weight, NOC):
 
         final_max = [user_max_sport, two_max_sport, three_max_sport]
         final_min = [user_min_sport, two_min_sport, three_min_sport]   
+
+        return (final_max, final_min)
+    
 
 
     
