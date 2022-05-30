@@ -1,6 +1,9 @@
 from flask import Flask, redirect, render_template, request, url_for
 import json
 
+rds_connection_string = "postgresql://vkvodlagclammk:665830b16c2ac37d2d21b681e0d49f46dfc70833b169c43fb440602fdea73276@ec2-54-211-255-161.compute-1.amazonaws.com:5432/dcuj01hki6lv7t"
+engine = create_engine(rds_connection_string)
+
 #set up the flask server
 app = Flask(__name__, template_folder='templates')
 
