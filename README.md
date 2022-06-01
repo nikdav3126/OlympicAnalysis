@@ -20,7 +20,7 @@ Olympics datasets were obtained from kaggle.com:
 # Datasets:
 ●	https://www.kaggle.com/code/vhlaca/olympic-games-results-vs-gdp-vs-population/data
 ●	https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
-![image](https://user-images.githubusercontent.com/94502554/171308022-be583c9e-57ee-4250-90bf-41e16912e56a.png)
+
 
 
 # Technologies Used:
